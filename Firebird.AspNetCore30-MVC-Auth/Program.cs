@@ -27,16 +27,16 @@ namespace Firebird.AspNetCore30_MVC_Auth
                     {
                     })
                     .UseNLog();  // NLog: setup NLog for Dependency injection
-                    webBuilder.ConfigureAppConfiguration((hostingContext, config) =>
-                    {
-                        var env = hostingContext.HostingEnvironment;
-                        var rootDirectory = env.ContentRootPath;
-                        AppDomain.CurrentDomain.SetData("RootDirectory", rootDirectory);
-                        string absolute = Path.GetFullPath(Path.Combine(rootDirectory, "App_Data"));
-                        if (!Directory.Exists(absolute))
-                            Directory.CreateDirectory(absolute);
-                        AppDomain.CurrentDomain.SetData("DataDirectory", absolute);
-                    });
+                    //webBuilder.ConfigureAppConfiguration((hostingContext, config) =>
+                    //{
+                    //    var env = hostingContext.HostingEnvironment;
+                    //    var rootDirectory = env.ContentRootPath;
+                    //    AppDomain.CurrentDomain.SetData("RootDirectory", rootDirectory);
+                    //    string absolute = Path.GetFullPath(Path.Combine(rootDirectory, "App_Data"));
+                    //    if (!Directory.Exists(absolute))
+                    //        Directory.CreateDirectory(absolute);
+                    //    AppDomain.CurrentDomain.SetData("DataDirectory", absolute);
+                    //});
                 });
     }
 }

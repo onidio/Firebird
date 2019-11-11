@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Firebird.AspNetCore30_MVC_Auth.Data;
+using FirebirdSql.Data.FirebirdClient;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -27,8 +28,12 @@ namespace Firebird.AspNetCore30_MVC_Auth
         public void ConfigureServices(IServiceCollection services)
         {
             string connectionString = Configuration.GetConnectionString("DefaultConnection");
-            string dataDirectory = AppDomain.CurrentDomain.GetData("DataDirectory").ToString();
-            connectionString = connectionString.Replace("|DataDirectory|", dataDirectory);
+            //string dataDirectory = AppDomain.CurrentDomain.GetData("DataDirectory").ToString();
+            //connectionString = connectionString.Replace("|DataDirectory|", dataDirectory);
+            
+            //connectionString = @"User=SYSDBA;Password=masterkey;Database=EMPLOYEE.FDB;DataSource=localhost;Port=3050;Dialect=3;Charset=NONE;Role=;Connection lifetime=15;Pooling=true;MinPoolSize=0;MaxPoolSize=50;Packet Size=8192;ServerType=1;";
+            //var connString = new FbConnectionStringBuilder(connectionString) { ClientLibrary = @"fbserver\fbclient.dll", Database = @"fbserver\EMPLOYEE.FDB" }.ToString();
+
             services.AddDbContext<ApplicationDbContext>(
                 options=> {
                     options.UseFirebird(connectionString);
