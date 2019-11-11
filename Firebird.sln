@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Firebird.ConsoleApp", "Fire
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Firebird.AspNetCore30-MVC-Auth", "Firebird.AspNetCore30-MVC-Auth\Firebird.AspNetCore30-MVC-Auth.csproj", "{F40AB32B-FC0A-42AC-91F0-EBCA08B7CCE7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Firebird.AspNetCore22-MVC-Auth", "Firebird.AspNetCore22-MVC-Auth\Firebird.AspNetCore22-MVC-Auth.csproj", "{F6838F7F-33AD-41F3-85D6-F08D5E6F6241}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Firebird.AspNetCore22-MVC-Auth", "Firebird.AspNetCore22-MVC-Auth\Firebird.AspNetCore22-MVC-Auth.csproj", "{3C658CF8-B6EC-49D2-80F3-CD193197C978}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{F40AB32B-FC0A-42AC-91F0-EBCA08B7CCE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F40AB32B-FC0A-42AC-91F0-EBCA08B7CCE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F40AB32B-FC0A-42AC-91F0-EBCA08B7CCE7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F6838F7F-33AD-41F3-85D6-F08D5E6F6241}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F6838F7F-33AD-41F3-85D6-F08D5E6F6241}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F6838F7F-33AD-41F3-85D6-F08D5E6F6241}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F6838F7F-33AD-41F3-85D6-F08D5E6F6241}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C658CF8-B6EC-49D2-80F3-CD193197C978}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C658CF8-B6EC-49D2-80F3-CD193197C978}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C658CF8-B6EC-49D2-80F3-CD193197C978}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C658CF8-B6EC-49D2-80F3-CD193197C978}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
