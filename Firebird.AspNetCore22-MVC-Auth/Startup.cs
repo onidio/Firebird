@@ -13,6 +13,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using FirebirdSql.Data.FirebirdClient;
+using System.IO;
 
 namespace Firebird.AspNetCore22_MVC_Auth
 {
@@ -35,9 +37,17 @@ namespace Firebird.AspNetCore22_MVC_Auth
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            var binDirectory=AppDomain.CurrentDomain.GetData("BinDirectory").ToString();
+            var dataDirectory=AppDomain.CurrentDomain.GetData("DataDirectory").ToString();
+
+            var connection = new FbConnectionStringBuilder(Configuration.GetConnectionString("DefaultConnection"));
+            connection.ClientLibrary = Path.Combine(Path.Combine(binDirectory,"fbserver"), Path.GetFileName(connection.ClientLibrary));
+            connection.Database = Path.Combine(dataDirectory,Path.GetFileName(connection.Database));
+            var connectionstring = connection.ToString();
+
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseFirebird(
-                    Configuration.GetConnectionString("DefaultConnection")));
+                options.UseFirebird(connectionstring
+                ));
             services.AddDefaultIdentity<IdentityUser>()
                 .AddDefaultUI(UIFramework.Bootstrap4)
                 .AddEntityFrameworkStores<ApplicationDbContext>();

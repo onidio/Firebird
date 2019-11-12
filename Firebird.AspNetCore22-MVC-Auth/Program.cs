@@ -32,6 +32,9 @@ namespace Firebird.AspNetCore22_MVC_Auth
 
             webhostbuilder.ConfigureAppConfiguration((hostingContext, config) =>
             {
+                var location = new Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
+                var binDirectory= new FileInfo(location.AbsolutePath).Directory.FullName;
+                AppDomain.CurrentDomain.SetData("BinDirectory", binDirectory);
                 var env = hostingContext.HostingEnvironment;
                 var rootDirectory = env.ContentRootPath;
                 AppDomain.CurrentDomain.SetData("RootDirectory", rootDirectory);
@@ -39,6 +42,7 @@ namespace Firebird.AspNetCore22_MVC_Auth
                 if (!Directory.Exists(absolute))
                     Directory.CreateDirectory(absolute);
                 AppDomain.CurrentDomain.SetData("DataDirectory", absolute);
+
             });
             return webhostbuilder;
         }
