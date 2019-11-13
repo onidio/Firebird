@@ -39,9 +39,12 @@ namespace Firebird.AspNetCore22_MVC_Auth
 
             var binDirectory=AppDomain.CurrentDomain.GetData("BinDirectory").ToString();
             var dataDirectory=AppDomain.CurrentDomain.GetData("DataDirectory").ToString();
-
+            var fbserverDirectory= "fbs-x64";
+#if x86
+            fbserverDirectory = "fbs-x86";
+#endif
             var connection = new FbConnectionStringBuilder(Configuration.GetConnectionString("DefaultConnection"));
-            connection.ClientLibrary = Path.Combine(Path.Combine(binDirectory,"fbserver"), Path.GetFileName(connection.ClientLibrary));
+            connection.ClientLibrary = Path.Combine(Path.Combine(binDirectory, fbserverDirectory), Path.GetFileName(connection.ClientLibrary));
             connection.Database = Path.Combine(dataDirectory,Path.GetFileName(connection.Database));
             var connectionstring = connection.ToString();
 

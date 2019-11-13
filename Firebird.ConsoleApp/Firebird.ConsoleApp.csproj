@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Firebird.Embedded.Server" Version="3.0.4.1" />
+    <PackageReference Include="Firebird.Embedded.Server" Version="3.0.4.31" />
     <PackageReference Include="FirebirdSql.Data.FirebirdClient" Version="7.1.1" />
   </ItemGroup>
 

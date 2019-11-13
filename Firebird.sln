@@ -9,30 +9,48 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Firebird.ConsoleApp", "Fire
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Firebird.AspNetCore30-MVC-Auth", "Firebird.AspNetCore30-MVC-Auth\Firebird.AspNetCore30-MVC-Auth.csproj", "{F40AB32B-FC0A-42AC-91F0-EBCA08B7CCE7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Firebird.AspNetCore22-MVC-Auth", "Firebird.AspNetCore22-MVC-Auth\Firebird.AspNetCore22-MVC-Auth.csproj", "{3C658CF8-B6EC-49D2-80F3-CD193197C978}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Firebird.AspNetCore22-MVC-Auth", "Firebird.AspNetCore22-MVC-Auth\Firebird.AspNetCore22-MVC-Auth.csproj", "{3C658CF8-B6EC-49D2-80F3-CD193197C978}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{3BDA54DA-6E04-4BC1-A012-01FB02A07458}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3BDA54DA-6E04-4BC1-A012-01FB02A07458}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BDA54DA-6E04-4BC1-A012-01FB02A07458}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3BDA54DA-6E04-4BC1-A012-01FB02A07458}.Debug|x86.Build.0 = Debug|Any CPU
 		{3BDA54DA-6E04-4BC1-A012-01FB02A07458}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3BDA54DA-6E04-4BC1-A012-01FB02A07458}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BDA54DA-6E04-4BC1-A012-01FB02A07458}.Release|x86.ActiveCfg = Release|Any CPU
+		{3BDA54DA-6E04-4BC1-A012-01FB02A07458}.Release|x86.Build.0 = Release|Any CPU
 		{9C0EE9D9-D89B-4565-807A-CD58B05EEC1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9C0EE9D9-D89B-4565-807A-CD58B05EEC1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C0EE9D9-D89B-4565-807A-CD58B05EEC1A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9C0EE9D9-D89B-4565-807A-CD58B05EEC1A}.Debug|x86.Build.0 = Debug|Any CPU
 		{9C0EE9D9-D89B-4565-807A-CD58B05EEC1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C0EE9D9-D89B-4565-807A-CD58B05EEC1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C0EE9D9-D89B-4565-807A-CD58B05EEC1A}.Release|x86.ActiveCfg = Release|Any CPU
+		{9C0EE9D9-D89B-4565-807A-CD58B05EEC1A}.Release|x86.Build.0 = Release|Any CPU
 		{F40AB32B-FC0A-42AC-91F0-EBCA08B7CCE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F40AB32B-FC0A-42AC-91F0-EBCA08B7CCE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F40AB32B-FC0A-42AC-91F0-EBCA08B7CCE7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F40AB32B-FC0A-42AC-91F0-EBCA08B7CCE7}.Debug|x86.Build.0 = Debug|Any CPU
 		{F40AB32B-FC0A-42AC-91F0-EBCA08B7CCE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F40AB32B-FC0A-42AC-91F0-EBCA08B7CCE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F40AB32B-FC0A-42AC-91F0-EBCA08B7CCE7}.Release|x86.ActiveCfg = Release|Any CPU
+		{F40AB32B-FC0A-42AC-91F0-EBCA08B7CCE7}.Release|x86.Build.0 = Release|Any CPU
 		{3C658CF8-B6EC-49D2-80F3-CD193197C978}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3C658CF8-B6EC-49D2-80F3-CD193197C978}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C658CF8-B6EC-49D2-80F3-CD193197C978}.Debug|x86.ActiveCfg = Debug|x86
+		{3C658CF8-B6EC-49D2-80F3-CD193197C978}.Debug|x86.Build.0 = Debug|x86
 		{3C658CF8-B6EC-49D2-80F3-CD193197C978}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C658CF8-B6EC-49D2-80F3-CD193197C978}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C658CF8-B6EC-49D2-80F3-CD193197C978}.Release|x86.ActiveCfg = Release|Any CPU
+		{3C658CF8-B6EC-49D2-80F3-CD193197C978}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

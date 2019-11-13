@@ -1,13 +1,19 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
     <RootNamespace>Firebird.AspNetCore22_MVC_Auth</RootNamespace>
+    <Platforms>AnyCPU;x86</Platforms>
+    <IsX86 Condition="'$(Platform)' == 'x86'">true</IsX86>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(IsX86)'=='true'">
+    <DefineConstants>x86</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Firebird.Embedded.Server" Version="3.0.4.1" />
+    <PackageReference Include="Firebird.Embedded.Server" Version="3.0.4.31" />
     <PackageReference Include="FirebirdSql.EntityFrameworkCore.Firebird" Version="7.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />

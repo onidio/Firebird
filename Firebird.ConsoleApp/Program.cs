@@ -10,7 +10,7 @@ namespace Firebird.ConsoleApp
             // Set the ServerType to 1 for connect to the embedded server
             string connectionString = @"User=SYSDBA;Password=masterkey;Database=EMPLOYEE.FDB;DataSource=localhost;Port=3050;Dialect=3;Charset=NONE;Role=;Connection lifetime=15;Pooling=true;MinPoolSize=0;MaxPoolSize=50;Packet Size=8192;ServerType=1;";
 
-            var connString = new FbConnectionStringBuilder(connectionString) {ClientLibrary= @"fbserver\fbclient.dll",Database= @"App_Data\EMPLOYEE.FDB" }.ToString();
+            var connString = new FbConnectionStringBuilder(connectionString) {ClientLibrary= @"fbs-x64\fbclient.dll",Database= @"App_Data\EMPLOYEE.FDB" }.ToString();
 
             FbConnection myConnection1 = new FbConnection(connString);
             FbConnection myConnection2 = new FbConnection(connString);
