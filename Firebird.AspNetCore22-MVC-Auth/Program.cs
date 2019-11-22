@@ -38,11 +38,13 @@ namespace Firebird.AspNetCore22_MVC_Auth
                 var env = hostingContext.HostingEnvironment;
                 var rootDirectory = env.ContentRootPath;
                 AppDomain.CurrentDomain.SetData("RootDirectory", rootDirectory);
-                string absolute = Path.GetFullPath(Path.Combine(rootDirectory, "App_Data"));
-                if (!Directory.Exists(absolute))
-                    Directory.CreateDirectory(absolute);
-                AppDomain.CurrentDomain.SetData("DataDirectory", absolute);
+                string dataDirectory = Path.GetFullPath(Path.Combine(rootDirectory, "App_Data"));
+                if (!Directory.Exists(dataDirectory))
+                    Directory.CreateDirectory(dataDirectory);
+                AppDomain.CurrentDomain.SetData("DataDirectory", dataDirectory);
 
+                Environment.SetEnvironmentVariable("FIREBIRD_TMP", Path.Combine(dataDirectory, "FIREBIRD_TMP"));
+                Environment.SetEnvironmentVariable("FIREBIRD_LOCK", Path.Combine(dataDirectory, "FIREBIRD_LOCK"));
             });
             return webhostbuilder;
         }
