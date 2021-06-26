@@ -2,12 +2,12 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Firebird.Embedded.Server" Version="3.0.4.31" />
-    <PackageReference Include="FirebirdSql.Data.FirebirdClient" Version="7.1.1" />
+    <PackageReference Include="Firebird.Embedded.Server-v3" Version="3.0.7.33374" />
+    <PackageReference Include="FirebirdSql.Data.FirebirdClient" Version="8.0.1" />
   </ItemGroup>
 
   <ItemGroup>

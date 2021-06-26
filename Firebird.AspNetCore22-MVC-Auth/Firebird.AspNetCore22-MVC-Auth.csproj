@@ -13,7 +13,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Firebird.Embedded.Server" Version="3.0.4.31" />
+    <PackageReference Include="Firebird.Embedded.Server-v3" Version="3.0.7.33374" />
     <PackageReference Include="FirebirdSql.EntityFrameworkCore.Firebird" Version="7.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
