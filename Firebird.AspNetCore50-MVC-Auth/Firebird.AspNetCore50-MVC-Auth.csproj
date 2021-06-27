@@ -14,6 +14,7 @@
   </PropertyGroup>
   
   <ItemGroup>
+    <PackageReference Include="Firebird.Embedded.Server-v4" Version="4.0.0.2496" />
     <PackageReference Include="FirebirdSql.EntityFrameworkCore.Firebird" Version="8.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="5.0.7" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.7" />
@@ -27,6 +28,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="App_Data\EMPLOYEE.FDB">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
     <None Update="fbs-x64\fbclient.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

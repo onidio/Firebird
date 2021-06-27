@@ -12,6 +12,7 @@ using FirebirdSql.Data.FirebirdClient;
 using Microsoft.Extensions.Hosting;
 using System;
 using System.IO;
+using FirebirdSql.EntityFrameworkCore.Firebird.Infrastructure;
 
 namespace Firebird.AspNetCore50_MVC_Auth
 {
@@ -37,16 +38,20 @@ namespace Firebird.AspNetCore50_MVC_Auth
             connection.ClientLibrary = Path.Combine(Path.Combine(binDirectory, fbserverDirectory), Path.GetFileName(connection.ClientLibrary));
             connection.Database = Path.Combine(dataDirectory,Path.GetFileName(connection.Database));
             var connectionstring = connection.ToString();
+            if (!File.Exists(connection.Database)) {
+                FbConnection.CreateDatabase(connectionstring, pageSize: 4096 * 4);
+            }
 			
-            services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseFirebird(connectionstring
-                ));
+            services.AddDbContext<ApplicationDbContext>(options =>{options.UseFirebird(connectionstring);});
             services.AddDatabaseDeveloperPageExceptionFilter();
 
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
         }
+
+       
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
