@@ -7,7 +7,7 @@
 
   <ItemGroup>
     <PackageReference Include="Firebird.Embedded.Server-v3" Version="3.0.7.33374" />
-    <PackageReference Include="FirebirdSql.Data.FirebirdClient" Version="8.0.1" />
+    <PackageReference Include="FirebirdSql.Data.FirebirdClient" Version="8.5.4" />
   </ItemGroup>
 
   <ItemGroup>

@@ -15,12 +15,12 @@
   
   <ItemGroup>
     <PackageReference Include="Firebird.Embedded.Server-v3" Version="3.0.7.33374" />
-    <PackageReference Include="FirebirdSql.EntityFrameworkCore.Firebird" Version="8.0.1" />
+    <PackageReference Include="FirebirdSql.EntityFrameworkCore.Firebird" Version="8.5.4" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="5.0.7" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.7" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="5.0.7" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.7" />
-    <PackageReference Include="NLog.Web.AspNetCore" Version="4.12.0" />
+    <PackageReference Include="NLog.Web.AspNetCore" Version="4.14.0" />
   </ItemGroup>
 
   <ItemGroup>
