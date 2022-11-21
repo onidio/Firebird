@@ -1,0 +1,21 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Architecture>Any CPU</Architecture>
+    <Architecture Condition="('$(Platform)' == 'x86')">x86</Architecture>
+    <Architecture Condition="('$(Platform)' == 'x64')">x64</Architecture>
+  </PropertyGroup>
+  <ItemGroup Condition="('$(Architecture)' == 'x64' or '$(Architecture)' == 'Any CPU')">
+    <NativeLibsFESx64 Include="$(MSBuildThisFileDirectory)FES\x64\**\*" />
+    <None Include="@(NativeLibsFESx64)">
+      <Link>FES-x64\%(RecursiveDir)%(FileName)%(Extension)</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup Condition="('$(Architecture)' == 'x86' or '$(Architecture)' == 'Any CPU')">
+    <NativeLibsFESx86 Include="$(MSBuildThisFileDirectory)FES\x86\**\*" />
+    <None Include="@(NativeLibsFESx86)">
+      <Link>FES-x86\%(RecursiveDir)%(FileName)%(Extension)</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>

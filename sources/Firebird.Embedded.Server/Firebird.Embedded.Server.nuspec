@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Firebird.Embedded.Server</id>
+    <version>4.0.2.2816</version>
+    <authors>Francis Gramaglia</authors>
+    <description>Firebird 4.0.2 native files for embedded server</description>
+    <releaseNotes>Firebird version 4.0.2</releaseNotes>
+  </metadata>
+  <files>
+	<file src="build\x64\**\*.*" target="build\FES\x64" />
+	<file src="build\x86\**\*.*" target="build\FES\x86" />
+    <file src="build\Firebird.Embedded.Server.targets" target="build\Firebird.Embedded.Server.targets" />
+  </files>
+</package>

@@ -1,0 +1,10 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net7.0-windows;net6.0-windows;net48</TargetFrameworks>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <NuspecFile>Firebird.Embedded.Server.nuspec</NuspecFile>
+    <Version>4.0.2</Version>
+  </PropertyGroup>
+
+</Project>
