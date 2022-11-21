@@ -9,7 +9,7 @@ namespace Firebird.Embedded.ConsoleApp
         public static void Main(string[] args)
         {
             // Set the ServerType to 1 for connect to the embedded server
-            string connectionString = @"user=SYSDBA;password=masterkey;database=EMPLOYEE.FDB;servertype=1;client library=fbclient.dll";
+            var connectionString = @"user=SYSDBA;password=masterkey;database=EMPLOYEE.FDB;servertype=1;client library=fbclient.dll";
 
             #region MyRegion
 
@@ -44,9 +44,9 @@ namespace Firebird.Embedded.ConsoleApp
             }
             #endregion
 
-            FbConnection myConnection1 = new FbConnection(connectionString);
-            FbConnection myConnection2 = new FbConnection(connectionString);
-            FbConnection myConnection3 = new FbConnection(connectionString);
+            var myConnection1 = new FbConnection(connectionString);
+            var myConnection2 = new FbConnection(connectionString);
+            var myConnection3 = new FbConnection(connectionString);
 
             try
             {
