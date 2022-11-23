@@ -1,9 +1,6 @@
 using Firebird.Embedded.AspNetCore.Data;
 using Firebird.Embedded.Extensions;
-using FirebirdSql.Data.FirebirdClient;
-using FirebirdSql.EntityFrameworkCore.Firebird.Infrastructure;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting.WindowsServices;
 
 namespace Firebird.Embedded.AspNetCore
@@ -14,23 +11,17 @@ namespace Firebird.Embedded.AspNetCore
     {
         public static void Main(string[] args)
         {
-            var builder = WebApplication.CreateBuilder(new WebApplicationOptions
+            WebApplicationBuilder builder = WebApplication.CreateBuilder(new WebApplicationOptions
             {
                 Args = args,
                 ContentRootPath = WindowsServiceHelpers.IsWindowsService() ? AppContext.BaseDirectory : default
             });
 
             // Add services to the container.
-            var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ??
-                                   throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+            //var connectionStr = builder.Configuration.GetConnectionString("DefaultConnection") ??
+            //                       throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 
             //#region MyRegion
-
-            //var env = builder.Environment;
-            //var rootDirectory = env.ContentRootPath;
-            //var dataDirectory = Path.GetFullPath(Path.Combine(rootDirectory, "App_Data"));
-            //if (!Directory.Exists(dataDirectory))
-            //    Directory.CreateDirectory(dataDirectory);
 
             ////var @lock=Environment.GetEnvironmentVariable("FIREBIRD_LOCK");
             ////var tmp = Environment.GetEnvironmentVariable("FIREBIRD_TMP");
@@ -40,8 +31,6 @@ namespace Firebird.Embedded.AspNetCore
 
 
             //var connection = new FbConnectionStringBuilder(connectionString);
-            //connection.Database = Path.Combine(dataDirectory, Path.GetFileName(connection.Database));
-            //connection.ServerType=FbServerType.Embedded;
             //connectionString = connection.ToString();
             ////if (!File.Exists(connection.Database))
             ////{
@@ -50,10 +39,16 @@ namespace Firebird.Embedded.AspNetCore
             //#endregion
 
             builder.Services.AddDbContext<ApplicationDbContext>(
-                options => options.UseFirebirdEmbedded(connectionString, embeddedOptionsAction: opt =>
-                {
-                    opt.DatabaseDirectory = EmbeddedDatabaseDirectory.FromConnectionString;
-                }));
+                options => options.UseFirebirdEmbedded(
+                    embeddedOptionsAction: opt =>
+                    {
+                        opt.DatabaseName = "IDENTITY.FDB";
+                        opt.DatabaseDirectory = new EmbeddedDatabaseDirectory(Path.Combine(builder.Environment.ContentRootPath, "App_Data"));
+                        //EmbeddedDatabaseDirectory.FromConnectionString;
+                    }
+                    //,connectionString:connectionStr
+                    )
+                );
 
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
@@ -88,4 +83,6 @@ namespace Firebird.Embedded.AspNetCore
             app.Run();
         }
     }
+
+    
 }

@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Firebird.Embedded.ConsoleAp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Firebird.Embedded.AspNetCore", "sources\Samples\Firebird.Embedded.AspNetCore\Firebird.Embedded.AspNetCore.csproj", "{BA19DEDD-667E-4DDB-AFB6-CD217141CC5C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Firebird.Embedded.Extensions", "sources\Firebird.Embedded.Extensions\Firebird.Embedded.Extensions.csproj", "{7853CD45-832D-48DA-80C1-67B85FEF84C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Firebird.Embedded.Extensions", "sources\Firebird.Embedded.Extensions\Firebird.Embedded.Extensions.csproj", "{7853CD45-832D-48DA-80C1-67B85FEF84C1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
