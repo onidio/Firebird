@@ -20,6 +20,8 @@ public static class FbeDbContextOptionsBuilderExtensions
             fbConnection.UserID = "SYSDBA";
         if (string.IsNullOrWhiteSpace(fbConnection.Password))
             fbConnection.Password = "masterkey";
+        if (string.IsNullOrWhiteSpace(fbConnection.Charset))
+            fbConnection.Charset = "utf8";
         fbConnection.ServerType = FbServerType.Embedded;
         fbConnection.ClientLibrary = Path.Combine(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, Environment.Is64BitProcess ? "FES-x64" : "FES-x86"), "fbclient.dll");
         if (embeddedOptions.DatabaseName != null)

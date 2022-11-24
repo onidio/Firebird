@@ -1,6 +1,8 @@
 using Firebird.Embedded.AspNetCore.Data;
 using Firebird.Embedded.Extensions;
+using FirebirdSql.Data.FirebirdClient;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting.WindowsServices;
 
 namespace Firebird.Embedded.AspNetCore
@@ -44,11 +46,31 @@ namespace Firebird.Embedded.AspNetCore
                     {
                         opt.DatabaseName = "IDENTITY.FDB";
                         opt.DatabaseDirectory = new EmbeddedDatabaseDirectory(Path.Combine(builder.Environment.ContentRootPath, "App_Data"));
-                        //EmbeddedDatabaseDirectory.FromConnectionString;
                     }
                     //,connectionString:connectionStr
                     )
                 );
+
+            builder.Services.AddDbContext<DataDbContext>(
+                options => options.UseFirebirdEmbedded(
+                    embeddedOptionsAction: opt =>
+                    {
+                        opt.DatabaseName = "DATA.FDB";
+                        opt.DatabaseDirectory = new EmbeddedDatabaseDirectory(Path.Combine(builder.Environment.ContentRootPath, "App_Data"));
+                    }
+                    //,connectionString:connectionStr
+                )
+            );
+
+            //var connection = new FbConnectionStringBuilder("database=localhost:data.fdb;user=sysdba;password=masterkey");
+            //builder.Services.AddDbContext<DataDbContext>(
+            //    options => options.UseFirebird(connection.ToString()
+            //        //, opt => {
+            //        //   opt.WithExplicitParameterTypes(false);
+            //        //   opt.WithExplicitStringLiteralTypes(false);
+            //        //}
+            //        )
+            //);
 
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
