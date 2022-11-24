@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Firebird.AspNetCore.Sample.Migrations
+namespace Firebird.Embedded.AspNetCore.Migrations
 {
     public partial class Init : Migration
     {
