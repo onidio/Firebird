@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace Firebird.Embedded.AspNetCore.Data;
+﻿namespace Firebird.Embedded.AspNetCore.Data;
 
 public class Student
 {

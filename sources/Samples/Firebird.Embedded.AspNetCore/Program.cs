@@ -1,8 +1,6 @@
 using Firebird.Embedded.AspNetCore.Data;
 using Firebird.Embedded.Extensions;
-using FirebirdSql.Data.FirebirdClient;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting.WindowsServices;
 
 namespace Firebird.Embedded.AspNetCore

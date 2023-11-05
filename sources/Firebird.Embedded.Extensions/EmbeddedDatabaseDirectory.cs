@@ -20,7 +20,7 @@ public class EmbeddedDatabaseDirectory: IEmbeddedDatabaseDirectory
     private static CurrentDomainBaseDirectoryClass? _CurrentDomainBaseDirectory;
     protected class CurrentDomainBaseDirectoryClass: IEmbeddedDatabaseDirectory
     {
-        public string GetDatabasePath(string connectionstring)
+        public string GetDatabasePath(string connectionstring = "")
         {
             var fbConnection = new FbConnectionStringBuilder(connectionstring);
             return Path.Combine(AppDomain.CurrentDomain.BaseDirectory, Path.GetFileName(fbConnection.Database));
@@ -33,6 +33,8 @@ public class EmbeddedDatabaseDirectory: IEmbeddedDatabaseDirectory
     {
         public string GetDatabasePath(string connectionstring)
         {
+            if (string.IsNullOrWhiteSpace(connectionstring))
+                throw new ArgumentNullException(nameof(connectionstring));
             var fbConnection = new FbConnectionStringBuilder(connectionstring);
             return fbConnection.Database;
         }

@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System.Reflection.Emit;
 
 namespace Firebird.Embedded.AspNetCore.Data;
 
