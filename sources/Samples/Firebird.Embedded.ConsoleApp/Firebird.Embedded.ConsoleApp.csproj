@@ -17,7 +17,7 @@
 </PropertyGroup>
 <ItemGroup>
     <PackageReference Include="Firebird.Embedded.Server" Version="4.0.2.2816" />
-    <PackageReference Include="FirebirdSql.Data.FirebirdClient" Version="9.1.1" />
+    <PackageReference Include="FirebirdSql.Data.FirebirdClient" Version="10.0.0" />
   </ItemGroup>
 <ItemGroup>
   <None Update="App_Data\EMPLOYEE.FDB">
